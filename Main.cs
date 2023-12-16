@@ -214,10 +214,11 @@ namespace UnwantedCompany
                 {
                     Application.OpenURL("https://steamcommunity.com/profiles/" + Settings.Instance.selectedPlayer.playerSteamId);
                 }
-                if (GUILayout.Button("Kill (Host)"))
+                if (GUILayout.Button("Kill"))
                 {
-                    Vector3 vector3 = new Vector3(1f, 1f, 1f);
-                    Settings.Instance.selectedPlayer.KillPlayer(vector3, true, CauseOfDeath.Suffocation, 0);
+                    //Vector3 vector3 = new Vector3(1f, 1f, 1f);
+                    //Settings.Instance.selectedPlayer.KillPlayer(vector3, true, CauseOfDeath.Suffocation, 0);
+                    Settings.Instance.selectedPlayer.DamagePlayerFromOtherClientServerRpc(1000, new Vector3(0f, 0f, 0f), 0);
                 }
                 if (GUILayout.Button("Heal (Host)"))
                 {
